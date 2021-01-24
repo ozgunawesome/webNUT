@@ -24,6 +24,8 @@ class WebNUT(object):
                         'description': client.description(ups),
                         'status': self._get_ups_status(ups_vars),
                         'battery': ups_vars['battery.charge'],
+                        'load': ups_vars['ups.load'],
+
                     }
                 return ups_list
         except nut2.PyNUTError:
