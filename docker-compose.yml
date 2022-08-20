@@ -1,0 +1,14 @@
+version: '3'
+services:
+  webnut:
+    container_name: 'webnut'
+    ports:
+      - '127.0.0.1:6543:6543'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/application
+    command: pserve production.ini --reload
+    restart: unless-stopped
+

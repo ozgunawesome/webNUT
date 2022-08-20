@@ -8,8 +8,8 @@ def main(global_config, **settings):
     config = Configurator(settings=settings)
     config.include('pyramid_chameleon')
     config.add_static_view('static', 'static', cache_max_age=3600)
-    config.add_route('home', '/')
-    config.add_route('ups_view', '/{ups}')
+    config.add_route('home', '/ups')
+    config.add_route('ups_view', '/ups/{ups}')
     config.add_view('webnut.views.notfound',
             renderer='webnut:templates/404.pt',
             context='pyramid.exceptions.NotFound')
